@@ -7,8 +7,11 @@ from spotify_api import getAccessTokenSpt, getArtistTopTrack, getSongQueryString
 from genius_api import getTrackData
 from os import getenv
 from decouple import config 
+from dotenv import load_dotenv, find_dotenv
 
 app = flask.Flask(__name__)
+
+load_dotenv(find_dotenv())
 
 # My favorite artist ids list 
 MY_ARTIST_IDS = [

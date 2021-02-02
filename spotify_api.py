@@ -1,5 +1,5 @@
 #from requests import get, post 
-from os import environ
+import os
 from random import choice 
 from requests import get, post 
 from decouple import config
@@ -13,8 +13,8 @@ SPT_AUTH_URL = 'https://accounts.spotify.com/api/token'
 
 def getAccessTokenSpt():
     
-    sptClientId =  environ['CLIENT_ID']
-    sptClientSecret = environ['CLIENT_SECRET']
+    sptClientId =  os.getenv('CLIENT_ID')
+    sptClientSecret = os.getenv('CLIENT_SECRET')
     
     authResp = post(SPT_AUTH_URL, {'grant_type': 'client_credentials', 'client_id': sptClientId, 'client_secret': sptClientSecret,})
     
