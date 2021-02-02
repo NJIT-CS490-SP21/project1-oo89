@@ -1,21 +1,29 @@
-<html>
-    <head>
-        <link href="static/style.css" rel="stylesheet">
-       <!-- <link rel="stylesheet" src="/static/theme.css"/>-->
-    </head>
-    <body>
-        <h1>
-            <ol> 
-                <!-- For loop logic of jinja template -->
-                {%for i in range(0, lenght)%} 
-  
-                    <li>{{tv_lst[i]}} <img src={{pic_url[i]}} width="80" height="50"> </li> 
-                {%endfor%} 
-            </ol> 
-        </h1>
-        <h2>
-            Oscar's favorite TV shows are:
-            {{tv_lst[0], tv_lst[1], tv_lst[2]}}
-        </h2>
-    </body>
-</html>
+<!doctype html>
+
+<head>
+    <title>Music ToGo</title>
+    <link rel="stylesheet" type="text/css" href="static/style5.css">
+</head>
+
+
+<h1 class="content">{{songName}}</h1>
+
+<div class="content">
+    <h2>by {{artistName}}</h2>
+    <img class="artist" height="70px" width="70px" src={{artistImageUrl}} />
+</div>
+
+<div class="content">
+    <img class="album" src={{songImageUrl}} />
+</div>
+
+<div class="content">
+    <audio controls src={{songPreviewUrl}}>
+        Your browser does not support the
+        <code>audio</code> element.
+    </audio>
+</div>
+
+<div class="content link">
+    <a href={{lyricsUrl}} target="_blank">Click here to see the lyrics!</a>
+</div>

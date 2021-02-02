@@ -1,19 +1,24 @@
 import flask
 import os
-import random
-import spotify_api
-import genius_api
+from random import choice 
+import json 
+import requests
+from spotify_api import getAccessTokenSpt, getArtistTopTrack, getSongQueryString 
+from genius_api import getTrackData
 from os import getenv
+from decouple import config 
 
 app = flask.Flask(__name__)
 
+# My favorite artist ids list 
 MY_ARTIST_IDS = [
     '0vR2qb8m9WHeZ5ByCbimq2', # Reik 
     '5Pwc4xIPtQLFEnJriah9YJ', # OneRepublic
     '4VMYDCV2IEDYJArk749S6m', # Daddy Yankee 
     '4wLXwxDeWQ8mtUIRPxGiD6', # Marc Anthony 
     '6eUKZXaKkcviH0Ku9w2n3V', # Ed Sheeran 
-    '1XXUv8GRyRqOXVuDwB5QaS'  # Leoni Torres
+    '1XXUv8GRyRqOXVuDwB5QaS', # Leoni Torres
+    '2cy1zPcrFcXAJTP0APWewL'  # Gente de Zona
     ]
 
 
@@ -21,21 +26,25 @@ MY_ARTIST_IDS = [
 
 def index():
     
-    # This part is to have a base from the last homework I will remove it after I finish with the other. 
-    tv_lst = ["La que se Avecina", "House of Cards", "Grey's Anatomy", "The Crown", "Aida"]
-    pic_url = ["/static/LaQueSeAvecina1.jpeg","/static/House.jpeg","/static/Greys.jpeg","/static/TheCrown.jpeg","/static/Aida.jpeg"]
+    """Spotify info"""  
+    accessToken = getAccessTokenSpt()
+    artistId = choice(MY_ARTIST_IDS)
+    topTrackData = getArtistTopTrack(accessToken, artistId)
     
-    # Spotify info 
-    #access_token = get_access_token()
-    #artist_id = choice(ARTIST_IDS)
-    #top_track_data = get_artist_top_tracks(access_token, artist_id)
+    trackName = topTrackData['name']
+    artistName = topTrackData['artists'][0]['name']
+    
+    songQueryString = getSongQueryString(trackName, artistName)
+    geniusData = getTrackData(songQueryString)
     
     return flask.render_template(
         "index.html",
-        tv_lst = tv_lst,
-        lenght= len(tv_lst),
-        pic_url = pic_url, 
-        pic_leng = len(pic_url)
+        songName = trackName, 
+        artistName = artistName, 
+        songPreviewUrl = topTrackData['preview_url'],
+        songImageUrl = topTrackData['album']['images'][1]['url'],
+        lyricsUrl = geniusData['url'],
+        artistImageUrl = geniusData['primary_artist']['image_url']
         )
 
 
