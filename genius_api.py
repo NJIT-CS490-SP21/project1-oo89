@@ -1,4 +1,4 @@
-import os 
+import os
 from requests import get
 from dotenv import load_dotenv, find_dotenv
 
