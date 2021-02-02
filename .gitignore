@@ -1,4 +1,4 @@
-.env
+key.env
 __pycache__/
 settings.py
 env/
