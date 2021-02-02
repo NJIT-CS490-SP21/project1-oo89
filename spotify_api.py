@@ -22,10 +22,10 @@ def getAccessTokenSpt():
     authResp = post(SPT_AUTH_URL, {'grant_type': 'client_credentials', 'client_id': sptClientId, 'client_secret': sptClientSecret,})
     
     authResponseData = authResp.json()
-    return authResponseData["access_token"]
+    return authResponseData['access_token']
 
 
-BASE_URL = "https://api.spotify.com/v1/artists/"
+BASE_URL = 'https://api.spotify.com/v1/artists/'
 PARAMS = {'market': 'US'}
 
 def getArtistTopTrack(accessToken, artistId):
@@ -40,7 +40,7 @@ def getArtistTopTrack(accessToken, artistId):
     return choice(data['tracks'])
 
 def getSongQueryString(songName, artistName):
-    """Returns query string for Genius API search call"""
+
 
     goodSongName = songName.split('(')[0]
     return goodSongName + ' ' + artistName
