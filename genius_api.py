@@ -1,13 +1,11 @@
-# obtain data from Genius! 
-
-from os import environ
+import os
 from requests import get
 
 BASE_URL = 'https://api.genius.com/search'
 
 def getTrackData(songQuery):
     
-    accessToken = environ['GENIUS_ACCESS_TOKEN']
+    accessToken = os.getenv('GENIUS_ACCESS_TOKEN')
     headers = {'Authorization': 'Bearer ' + accessToken}
 
     params = {'q': songQuery}

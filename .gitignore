@@ -1,3 +1,4 @@
+secret.env
 test.env
 key.env
 __pycache__/
