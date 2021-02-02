@@ -1,28 +1,48 @@
-# project1-oo89
+# project1-oo89 Oscar Ojeda 
+
 CS490
+
 Music ToGo 
-Oscar Ojeda 
+
+
 Heroku link: https://music-togo.herokuapp.com/
 
 SET UP 
+
 1- Create folder where is going to be the project.
+
 2- Make all the files and directories that you will need as they are an folder to save "style.css", tamplates to save your html code and the other pyton files. 
+
 3- pip install fask 
+
 4- Install git->  git init 
+
 5- I made the first commit before seting up my user.name and my email so before do git config --global user. name Oscar 
+
 6- The same thing for your email but now instead of user.name uses user.email
+
 7- After the commit do git add . 
+
 8- Then I did git marge master because I already had a repo on Git-Hub, Also a git clone with my Git-Hub account, you also can use git log to see the logs. 
+
 9- The Push the contente to the cloud uses git push, you can uses https link or also ssh connection where you have to save your privet key and uses your 
-public key to add it to Git-Hub, in my case I uses https and each time I have to push something I have to enter user name and pass
+public key to add it to Git-Hub, in my case I uses https and each time I have to push something I have to enter user name and pass.
+
 10- The other part is to create your keroku. npm install -g heroku and upload the content to there. It is important to have the requirements.txt 
-document in order to success in your heroku connection. (pip freeze > requirements.txt)
+document in order to success in your heroku connection. (pip freeze > requirements.txt).
+
 11- Install gunicorn 
+
 12- To push to heroku (git push heroku main:main)
-13- In this part I need to save some env var, I installed pip install -U python-dotenv, and then update your requirements document 
-14- Install python -m pip install requests 
-15- Save the sensitive information as they are your Spotify secret and id and also the CLIENT ACCESS TOKEN from genius 
-16- Then it is important to create .gitignore file to prevent that the sensitive information from getting uploaded to Git-Hub 
+
+13- In this part I need to save some env var, I installed pip install -U python-dotenv, and then update your requirements document.
+
+14- Install python -m pip install requests.
+
+15- Save the sensitive information as they are your Spotify secret and id and also the CLIENT ACCESS TOKEN from genius.
+
+16- Then it is important to create .gitignore file to prevent that the sensitive information from getting uploaded to Git-Hub.
+
 17- I had problem after doing all of this with the app on heroku, this happened because I didn't have the Procfile file, this 
 needs to have (web: python app.py) app is the name of my main python file. 
 
