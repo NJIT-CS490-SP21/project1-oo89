@@ -18,7 +18,7 @@ MY_ARTIST_IDS = [
     '4wLXwxDeWQ8mtUIRPxGiD6', # Marc Anthony 
     '6eUKZXaKkcviH0Ku9w2n3V', # Ed Sheeran 
     '1XXUv8GRyRqOXVuDwB5QaS', # Leoni Torres
-    '2cy1zPcrFcXAJTP0APWewL'  # Gente de Zona
+    '2cy1zPcrFcXAJTP0APWewL',  # Gente de Zona
     ]
 
 
