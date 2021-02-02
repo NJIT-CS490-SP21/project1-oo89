@@ -1,5 +1,5 @@
 #from requests import get, post 
-import os
+from os import environ 
 from dotenv import load_dotenv, find_dotenv
 from random import choice 
 from requests import get, post 
@@ -14,9 +14,9 @@ SPT_AUTH_URL = 'https://accounts.spotify.com/api/token'
 
 def getAccessTokenSpt():
     
-    sptClientId=os.getenv('CLIENT_ID')
+    sptClientId=environ['CLIENT_ID']
     
-    sptClientSecret=os.getenv('CLIENT_SECRET')
+    sptClientSecret=environ['CLIENT_SECRET']
     
     authResp = post(SPT_AUTH_URL, {'grant_type': 'client_credentials', 'client_id': sptClientId, 'client_secret': sptClientSecret,})
     
