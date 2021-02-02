@@ -1,12 +1,10 @@
 #from requests import get, post 
-from os import environ 
+import os
 from dotenv import load_dotenv, find_dotenv
 from random import choice 
 from requests import get, post 
 from decouple import config
 import json
-from os import getenv
-
 
 load_dotenv(find_dotenv())
 
@@ -14,9 +12,9 @@ SPT_AUTH_URL = 'https://accounts.spotify.com/api/token'
 
 def getAccessTokenSpt():
     
-    sptClientId=environ['CLIENT_ID']
+    sptClientId=os.getenv('CLIENT_ID')
     
-    sptClientSecret=environ['CLIENT_SECRET']
+    sptClientSecret=os.getenv('CLIENT_SECRET')
     
     authResp = post(SPT_AUTH_URL, {'grant_type': 'client_credentials', 'client_id': sptClientId, 'client_secret': sptClientSecret,})
     
@@ -43,6 +41,3 @@ def getSongQueryString(songName, artistName):
 
     goodSongName = songName.split('(')[0]
     return goodSongName + ' ' + artistName
-    
-    
-

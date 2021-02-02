@@ -1,6 +1,6 @@
-from os import environ
-from requests import get
+import os
 from dotenv import load_dotenv, find_dotenv
+from requests import get
 
 BASE_URL = 'https://api.genius.com/search'
 
@@ -8,7 +8,7 @@ load_dotenv(find_dotenv())
 
 def getTrackData(songQuery):
     
-    accessToken =environ['GENIUS_ACCESS_TOKEN']
+    accessToken=os.getenv('GENIUS_ACCESS_TOKEN')
     headers = {'Authorization': 'Bearer ' + accessToken}
 
     params = {'q': songQuery}

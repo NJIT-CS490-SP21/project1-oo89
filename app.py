@@ -5,8 +5,7 @@ import json
 import requests
 from spotify_api import getAccessTokenSpt, getArtistTopTrack, getSongQueryString 
 from genius_api import getTrackData
-from os import getenv
-from decouple import config 
+from decouple import config
 
 
 app = flask.Flask(__name__)
