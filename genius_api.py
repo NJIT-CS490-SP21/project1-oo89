@@ -15,10 +15,11 @@ def getTrackData(songQuery):
     response = get(BASE_URL, params=params, headers=headers)
 
     data = response.json()
-    hits = data['response']['hits']
-
+    remoteSongInfo = data['response']['hits']
+    
     def filterHits(hit):
         return hit['type'] == 'song'
 
-    songHits = filter(filterHits, hits)
+    songHits = filter(filterHits, remoteSongInfo)
     return list(songHits)[0]['result']
+

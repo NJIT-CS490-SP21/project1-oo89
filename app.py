@@ -6,6 +6,7 @@ import requests
 from spotify_api import getAccessTokenSpt, getArtistTopTrack, getSongQueryString 
 from genius_api import getTrackData
 from decouple import config
+from bs4 import BeautifulSoup
 
 
 app = flask.Flask(__name__)
@@ -39,6 +40,17 @@ def index():
     songQueryString = getSongQueryString(trackName, artistName)
     geniusData = getTrackData(songQueryString)
     
+     
+    def scrapSongUrl(url):
+        page = requests.get(url)
+        html = BeautifulSoup(page.text, 'html.parser')
+        lyrics = html.find('div', class_='lyrics').get_text()
+        
+        return lyrics
+    
+    myLyrics = scrapSongUrl(geniusData['url'])
+    
+    
     return flask.render_template(
         "index.html",
         songName = trackName, 
@@ -46,7 +58,8 @@ def index():
         songPreviewUrl = topTrackData['preview_url'],
         songImageUrl = topTrackData['album']['images'][1]['url'],
         lyricsUrl = geniusData['url'],
-        artistImageUrl = geniusData['primary_artist']['image_url']
+        artistImageUrl = geniusData['primary_artist']['image_url'],
+        myLyrics = myLyrics
         )
 
 
@@ -56,3 +69,4 @@ app.run(
     host=os.getenv('IP', '0.0.0.0'),
     debug=True
     ) 
+    

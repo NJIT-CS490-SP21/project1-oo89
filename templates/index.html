@@ -1,29 +1,47 @@
 <!doctype html>
-
+<html>
 <head>
     <title>Music ToGo</title>
-    <link rel="stylesheet" type="text/css" href="static/style5.css">
+    <link rel="stylesheet" type="text/css" href="static/style29.css">
 </head>
-
-
-<h1 class="content">{{songName}}</h1>
-
-<div class="content">
+<body>
+    <div class="player">
+        
+    <h1 class="content">{{songName}}</h1>
+    
+    <div class="content">
     <h2>by {{artistName}}</h2>
     <img class="artist" height="70px" width="70px" src={{artistImageUrl}} />
-</div>
+    </div>
+    
+    <div class="content">
+        <img class="album" src={{songImageUrl}} />
+    </div>
 
-<div class="content">
-    <img class="album" src={{songImageUrl}} />
-</div>
-
-<div class="content">
-    <audio controls src={{songPreviewUrl}}>
-        Your browser does not support the
-        <code>audio</code> element.
-    </audio>
-</div>
-
-<div class="content link">
+    <div class="content">
+        <audio controls src={{songPreviewUrl}}>
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio>
+    </div>
+    <div class="content link">
     <a href={{lyricsUrl}} target="_blank">Click here to see the lyrics!</a>
-</div>
+    </div>
+    </div>
+    
+     <div class="Lyric">
+          <h1> {{songName}} </h1>
+          
+          <div class="LyricTitle">
+            <h2>by {{artistName}}</h2>
+            <img class="artist" height="70px" width="70px" src={{artistImageUrl}} />
+          </div>
+          
+          <div class="Text">
+              <h2>Lyric</h2>
+              <p>{{myLyrics}}</p>
+              </div>
+          
+     </div>
+</body>
+</html>
