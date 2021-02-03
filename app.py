@@ -29,7 +29,6 @@ MY_ARTIST_IDS = [
 
 def index():
     
-    """Spotify info"""  
     accessToken = getAccessTokenSpt()
     artistId = choice(MY_ARTIST_IDS)
     topTrackData = getArtistTopTrack(accessToken, artistId)
