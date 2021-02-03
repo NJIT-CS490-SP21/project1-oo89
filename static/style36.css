@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    background: linear-gradient(360deg, #e91e63, #fffde6);
+   
+}
+
+.player{
+    position: relative; 
+    width:350px;
+    background: #b0bec5;
+    border-radius: 4%;
+    box-shadow: 0 50px 80px;
+    font-family: "Brush Script MT";
+}
+
+.player .content {
+    text-align: center;
+    position: relative;
+    width: 350px;
+    margin: 4px;
+}
+.player audio{
+    outline: none;
+}
+
+.artist {
+    border-radius: 50%;
+}
+
+.album {
+    border-radius: 4%;
+}
+
+.link a {
+    text-decoration: none;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: #5c6bc0;
+}
+
+.Lyric {
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    text-align: justify;
+    
+}
+.Text {
+     margin: 0px 0px 0px 0px;
+    white-space: pre-line; 
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll
+    
+}
