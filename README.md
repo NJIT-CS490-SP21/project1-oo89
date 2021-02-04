@@ -7,7 +7,7 @@ Music ToGo
 
 Heroku link: https://music-togo.herokuapp.com/
 
-##SET UP 
+## SET UP 
 1. Create a folder where is going to be the project.
 2. Make all the files and directories that you will need as they are a folder to save "style.css", templates to save your HTML code, and the other python files. 
 3. pip install flask 
@@ -35,7 +35,7 @@ needs to have (web: python app.py) app is the name of my main python file.
 1. Run command in terminal `python app.py`
 2. Preview web page in browser '/'
 
-##Technical issues
+## Technical issues
 
 1. As I explained before on #17 I had problems with Heroku because the app didn't run. After creating the file Procfile and adding the line of code 
 I already explained the problem was solved. (web: python app.py) 
@@ -54,9 +54,9 @@ I had all of these problems as I started the project before the conferences were
 6. This is why is very important to pay extra attention to that. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-##More Info for each py files
+## More Info for each py files
 
-#app.py 
+# app.py 
 
 The file app.py is the principal file of the application where is imported all the libraries I need to run this project and the others I created. 
 for more information check app.py file. 
@@ -72,7 +72,7 @@ artist name, among others.
 Then I returned all the information that was needed in the HTML file. 
 At the end run the app on the localhost and port 8080 
 
-#spotify
+# spotify
 
 As in-app I imported all the libraries I need, I create a var to save the token Spotify link. This app will be needed after, to create the complete link. 
 The methods getTokenSpt will uses the var from the env and create the authResp and then returned it. 
@@ -85,7 +85,7 @@ to access the data we want has in this case the track randomly selected.
 
 Method getSongQ will need the song name and artist name to clean the string. 
 
-#genius
+# genius
 
 From os import environ, from requests import get
 as before I create a var to save the genius link for search
@@ -93,7 +93,7 @@ as before I create a var to save the genius link for search
 Same as in Spotify you will need a token to do the authentication, it will be saved in accessToken. 
 This whole method will help us to get the Genius data that we need. 
 
-#Extra 
+# Extra 
 I also used this data to show in the HTML the actual Lyrics of each song that is loaded. In the future, 
 I am thinking to put the actual part of the lyrics while the song is playing like a karaoke. 
 
