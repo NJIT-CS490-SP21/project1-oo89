@@ -10,7 +10,7 @@ load_dotenv(find_dotenv())
 
 SPT_AUTH_URL = 'https://accounts.spotify.com/api/token'
 
-def getAccessTokenSpt():
+def getTokenSpt():
     
     sptClientId=os.getenv('CLIENT_ID')
     sptClientSecret=os.getenv('CLIENT_SECRET')
@@ -24,7 +24,7 @@ def getAccessTokenSpt():
 BASE_URL = 'https://api.spotify.com/v1/artists/'
 PARAMS = {'market': 'US'}
 
-def getArtistTopTrack(accessToken, artistId):
+def topTrack(accessToken, artistId):
     #find the top track for the artist 
 
     headers = {
@@ -35,7 +35,7 @@ def getArtistTopTrack(accessToken, artistId):
 
     return choice(data['tracks'])
 
-def getSongQueryString(songName, artistName):
+def getSongQ(songName, artistName):
 
 
     goodSongName = songName.split('(')[0]

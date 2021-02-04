@@ -6,7 +6,7 @@ BASE_URL = 'https://api.genius.com/search'
 
 load_dotenv(find_dotenv())
 
-def getTrackData(songQuery):
+def gTData(songQuery):
     
     accessToken=os.getenv('GENIUS_ACCESS_TOKEN')
     headers = {'Authorization': 'Bearer ' + accessToken}
