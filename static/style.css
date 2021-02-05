@@ -22,17 +22,27 @@ body {
     position: relative;
     width: 350px;
     margin: 4px;
+    
 }
-.player audio{
-    outline: none;
+.player .info {
+    text-align: center;
+    position: relative;
+    width: 350px;
+    margin: 4px;
+}
+.audio{
+     outline: none;
+    
 }
 
 .artist {
-    border-radius: 50%;
+    border-radius: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .album {
-    border-radius: 4%;
+    border-radius: 5%;
 }
 
 .link a {

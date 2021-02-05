@@ -51,7 +51,12 @@ I had all of these problems as I started the project before the conferences were
 4. Another problem with Heroku as I didn’t save the Config Vars in there so the application didn’t work. The solution is explained in #18 
 
 5. Also I would love to clarify that some times git-hub do weird thing as one time even having the gitignore file with the file name it was uploaded the env file.
-6. This is why is very important to pay extra attention to that. 
+This is why is very important to pay extra attention to that.
+
+6. I had problem with the CSS part because I dind’t know that much but watching videos and reading I figure out how to solve them. 
+
+7. On the method that save the song lyrics in order to be used then I had some problem with the JSON response. I solved this issue by paying more attention
+to the actual response to acces the elements I wanted. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## More Info for each py files
