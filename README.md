@@ -58,6 +58,10 @@ This is why is very important to pay extra attention to that.
 7. On the method that save the song lyrics in order to be used then I had some problem with the JSON response. I solved this issue by paying more attention
 to the actual response to acces the elements I wanted. 
 
+8. At the beginning of the project I had problems with the CSS file as after each change to it not changes were showed in the website. The solution to that was to change
+the name of the CSS file each time you want to see anything new. It is important to clarify that if you uses a file name that you already used in a previous version the program
+will run as it was at that time, because the file is saved in cache. 
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## More Info for each py files
 
@@ -65,8 +69,6 @@ to the actual response to acces the elements I wanted.
 
 The file app.py is the principal file of the application where is imported all the libraries I need to run this project and the others I created. 
 for more information check app.py file. 
-
-I added from bs4 import BeautifulSoup that helped with scrapSongUrl method to uses the Lyrics. To install is uses $ pip install beautifulsoup4. 
 
 Flask was initialized, I also create a list with my 7 artist id from Spotify. You can have then by going to Spotify and find your artist, then click on share, then copy Spotify URL. Following you will need to paste to any text editor and copy the id from the link. Example: 
 spotify:artist:2cy1zPcrFcXAJTP0APWewL --->> remove spotify:artist: 
@@ -94,6 +96,8 @@ Method getSongQ will need the song name and artist name to clean the string.
 
 From os import environ, from requests import get
 as before I create a var to save the genius link for search
+
+I added from bs4 import BeautifulSoup that helped with scrapSongUrl method to uses the Lyrics from Genius. To install is uses $ pip install beautifulsoup4. 
 
 Same as in Spotify you will need a token to do the authentication, it will be saved in accessToken. 
 This whole method will help us to get the Genius data that we need. 

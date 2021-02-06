@@ -1,4 +1,3 @@
-#from requests import get, post 
 import os
 from dotenv import load_dotenv, find_dotenv
 from random import choice 
@@ -36,7 +35,6 @@ def topTrack(accessToken, artistId):
     return choice(data['tracks'])
 
 def getSongQ(songName, artistName):
-
-
+    
     goodSongName = songName.split('(')[0]
     return goodSongName + ' ' + artistName

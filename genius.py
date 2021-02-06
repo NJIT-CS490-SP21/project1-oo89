@@ -24,6 +24,7 @@ def gTData(songSData):
     songHits = filter(filterHits, remoteSongInfo)
     return list(songHits)[0]['result']
 
+# I did this to have the song lyrics. 
 def scrapSongUrl(url):
         page = get(url)
         html = BeautifulSoup(page.text, 'html.parser')
