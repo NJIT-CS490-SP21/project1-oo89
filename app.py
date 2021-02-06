@@ -5,14 +5,10 @@ from random import choice
 import json 
 import requests
 from spotify import getTokenSpt, topTrack, getSongQ 
-from genius import gTData
+from genius import gTData, scrapSongUrl
 from decouple import config
 
-
-
 app = flask.Flask(__name__)
-
-
 
 # My favorite artist ids list 
 MY_ARTIST = [
@@ -30,22 +26,21 @@ MY_ARTIST = [
 
 def index():
     
+    # token
     token = getTokenSpt()
+    #Random artis ID 
     artistId = choice(MY_ARTIST)
+    #With the token and artist id to get the top tracks. 
     topTrackData = topTrack(token, artistId)
+    #from the top track data obtain the track name accessing to that with name. 
     trackName = topTrackData['name']
+    # the JSON return will help to have the artis name. 
     artistName = topTrackData['artists'][0]['name']
+    # the string to uses to get de genius data 
     songString = getSongQ(trackName, artistName)
+    # Genius data to have the Lyrics 
     geniusData = gTData(songString)
-    
-     # I did this to have the song lyrics. 
-    def scrapSongUrl(url):
-        page = requests.get(url)
-        html = BeautifulSoup(page.text, 'html.parser')
-        lyrics = html.find('div', class_='lyrics').get_text()
-        
-        return lyrics
-    
+    # I did this to have the song lyrics.
     myLyrics = scrapSongUrl(geniusData['url'])
     
     # this is the return part 

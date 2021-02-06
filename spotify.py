@@ -25,8 +25,8 @@ BASE_URL = 'https://api.spotify.com/v1/artists/'
 PARAMS = {'market': 'US'}
 
 def topTrack(accessToken, artistId):
+    
     #find the top track for the artist 
-
     headers = {
         'Authorization': 'Bearer {token}'.format(token=accessToken)
     }
