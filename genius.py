@@ -27,8 +27,15 @@ def gTData(songSData):
 # I did this to have the song lyrics. 
 def scrapSongUrl(url):
         page = get(url)
+        #print(page.text)
         html = BeautifulSoup(page.text, 'html.parser')
-        lyrics = html.find('div', class_='lyrics').get_text()
-        
-        return lyrics
+        #print(html)
+        try:
+            lyrics = html.find('div', class_="lyrics").get_text()
+            #print(lyrics)
+            return lyrics
+        except AttributeError:
+            print(" After using  this for month and working now is giving this error ERROR")
+            return "Problem with lyrics = html.find('div', class_="").get_text() \n that was working before (BeautifulSoup)"
+
 
