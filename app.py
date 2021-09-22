@@ -5,7 +5,7 @@ from random import choice
 import json 
 import requests
 from spotify import getTokenSpt, topTrack, getSongQ 
-from genius import gTData, scrapSongUrl
+from genius import gTData, get_Lyric
 from decouple import config
 
 app = flask.Flask(__name__)
@@ -40,8 +40,11 @@ def index():
     songString = getSongQ(trackName, artistName)
     # Genius data to have the Lyrics 
     geniusData = gTData(songString)
+    # I did this to have the song lyrics. OLD
+    #myLyrics = scrapSongUrl(geniusData['url'])
     # I did this to have the song lyrics.
-    myLyrics = scrapSongUrl(geniusData['url'])
+    myLyrics02 = get_Lyric(artistName, trackName)
+
     
     # this is the return part 
     return flask.render_template(
@@ -52,7 +55,7 @@ def index():
         songImageUrl = topTrackData['album']['images'][1]['url'],
         lyricsUrl = geniusData['url'],
         artistImageUrl = geniusData['primary_artist']['image_url'],
-        myLyrics = myLyrics
+        myLyrics02 = myLyrics02
         )
 
 
