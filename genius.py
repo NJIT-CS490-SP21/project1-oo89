@@ -18,7 +18,7 @@ def gTData(songSData):
 
     data = response.json()
     remoteSongInfo = data['response']['hits']
-    print(remoteSongInfo)
+    #print(remoteSongInfo)
     def filterHits(hit):
         return hit['type'] == 'song'
 
@@ -30,8 +30,12 @@ def get_Lyric(artis_name, song_name):
     genius = Genius(accessToken)
     song = genius.search_song(song_name, artis_name)
     song_lyric = song.lyrics
+    if song_lyric is not None:
+        return song_lyric
+    else:
+        return "No Lyrics for this song"
 
-    return song_lyric
+
 
 # I did this to have the song lyrics the first time I created this web but after I change to uses lyricsgenius from Genius.
 """
