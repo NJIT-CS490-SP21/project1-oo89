@@ -2,23 +2,24 @@
 <html>
 <head>
     <title>Music ToGo</title>
-    <link rel="stylesheet" type="text/css" href="static/style201.css">
+    <link rel="stylesheet" type="text/css" href="static/style202.css">
 </head>
 <body>
-    <div class="player">
-        
-        
+
+    <div class="player" >
+
+
      <div class="content">
         <img class="album" src={{songImageUrl}} />
     </div>
-    
+
     <h1 class="info">{{songName}}</h1>
-    
+
     <div class="info">
     <h2>by {{artistName}}</h2>
     <img class="artist" height="70px" width="70px" src={{artistImageUrl}} />
     </div>
-    
+
     <div class="content">
         <audio controls src={{songPreviewUrl}}>
             Your browser does not support the
@@ -29,10 +30,10 @@
     <a href={{lyricsUrl}} target="_blank">Click to see Genius lyrics!</a>
     </div>
     </div>
-    
+
      <div class="Lyric">
           <h1> {{songName}} </h1>
-          
+
           <div class="LyricTitle">
             <h2>by {{artistName}}</h2>
             <img class="artist" height="70px" width="70px" src={{artistImageUrl}} />
@@ -40,7 +41,10 @@
               <h2>Lyric</h2>
               <p>{{myLyrics02}}</p>
               </div>
-          
+     <form action="/">
+    <input class="p_Button" type="submit" value="Go to Search" />
+        </form>
      </div>
+
 </body>
 </html>

@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: linear-gradient(360deg, #e91e63, #fffde6);
+
+}
+h1 {
+      text-align:center;
+      fone-size:18;
+      }
+.link a {
+    text-decoration: none;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: #f06292;
+}
+.formcontainer {
+  text-align: left;
+  margin: 24px 50px 12px;
+      }
+.container {
+      padding: 16px 0;
+      text-align:left;
+      }
+
+button:hover {
+      opacity: 0.8;
+      }

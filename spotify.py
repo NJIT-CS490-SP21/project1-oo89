@@ -19,9 +19,34 @@ def getTokenSpt():
     authResponseData = authResp.json()
     return authResponseData['access_token']
 
-
 BASE_URL = 'https://api.spotify.com/v1/artists/'
 PARAMS = {'market': 'US'}
+SEARCH_URL = 'https://api.spotify.com/v1/search'
+
+def searchSong(song_name, artist_name, accessToken):
+
+    headers = {
+        'Authorization': 'Bearer {token}'.format(token=accessToken)
+    }
+    response = get(SEARCH_URL + '?q=' + song_name + ' ' + artist_name + '&offset=0&type=track', headers=headers, params=PARAMS)
+    data = response.json()
+    print(data)
+    #if data['tracks']['total'] == 0:
+     #   return "No Song fund"
+    #else:
+    tracks = ""
+    popularity = 0
+    for track in data['tracks']['items']:
+        if int(track['popularity']) > popularity:
+            popularity = int(track['popularity'])
+            tracks = track
+            #print(track['name'] + 'popularity' + str(track['popularity']))
+        else:
+            continue
+    #print(tracks)
+    #print(tracks['artists'][0]['name'])
+    return tracks
+
 
 def topTrack(accessToken, artistId):
     

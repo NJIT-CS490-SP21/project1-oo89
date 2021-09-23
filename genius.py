@@ -28,12 +28,16 @@ def gTData(songSData):
 def get_Lyric(artis_name, song_name):
     accessToken = os.getenv('GENIUS_ACCESS_TOKEN')
     genius = Genius(accessToken)
-    song = genius.search_song(song_name, artis_name)
-    song_lyric = song.lyrics
-    if song_lyric is not None:
-        return song_lyric
-    else:
-        return "No Lyrics for this song"
+    try:
+        song = genius.search_song(song_name, artis_name)
+        song_lyric = song.lyrics
+        if song_lyric is not None:
+            return song_lyric
+        else:
+            return "No Lyrics for this song"
+    except:
+        return "No Lyrics fund, Sorry"
+
 
 
 

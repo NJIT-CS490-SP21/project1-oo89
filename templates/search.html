@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Music ToGo</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+<div>
+    <h1>Spotify Song Searcher</h1>
+    <p>If you can't find the right song, please enter more</p>
+    <p>information on the name and all the artists.</p>
+    <p>Thank you so much!</p>
+    <hr/>
+    <form method="POST">
+        <div><label><b>Song Name</b> <input type="text" name="song_name" placeholder="Enter Song Name " required ></label></div>
+        <div><label><b>Artists Name</b><input type="text" name="artist_name" placeholder="Enter Artists Name " required></label></div>
+        <input class="p_Button" type="submit" value="Search">
+    </form>
+    <hr/>
+        <form action="/play">
+                <input class="p_Button" type="submit" value="Play a random song" />
+        </form>
+        <a href="https://oscarojeda.com" target="_blank">Click this link to check Oscar Ojeda Portfolio!</a>
+</div>
+</body>
+</html>
