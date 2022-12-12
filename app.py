@@ -103,7 +103,7 @@ def index():
 
 # server and ips to run the app 
 app.run(
-     port=int(os.getenv('PORT', 8081)),
+     port=int(os.getenv('PORT', 3001)),
     host=os.getenv('IP', '0.0.0.0'),
     debug=True
     ) 

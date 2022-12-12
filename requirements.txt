@@ -15,7 +15,6 @@ Flask==1.1.2
 git-remote-codecommit==1.15.1
 gunicorn==20.0.4
 idna==2.10
-ikp3db==1.4.1
 importlib-metadata==3.4.0
 ipython==7.16.1
 ipython-genutils==0.2.0
@@ -78,7 +77,6 @@ Flask==1.1.2
 git-remote-codecommit==1.15.1
 gunicorn==20.0.4
 idna==2.10
-ikp3db==1.4.1
 importlib-metadata==3.4.0
 ipython==7.16.1
 ipython-genutils==0.2.0
